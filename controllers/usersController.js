@@ -96,4 +96,20 @@ router.post('/:userId/tweets', (req, res) => {
     });
   });
 
+  router.delete('/:userId', (req, res) => {
+    console.log('DELETE USER');
+    // set the value of the user and tweet ids
+    const userId = req.params.userId;
+  
+    // find user in db by id
+    User.findById(userId, (err, foundUser) => {
+      // remove user
+      foundUser.remove();
+      // update 
+      foundUser.save((err, savedUser) => {
+        res.redirect('/users');
+      });
+    });
+  });
+
 module.exports = router;

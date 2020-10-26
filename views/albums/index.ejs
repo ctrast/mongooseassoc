@@ -1,0 +1,12 @@
+<ul>
+    <h1>Albums</h1>
+   <% albums.forEach(album => { %>
+    <li>
+        <a href="/albums/<%= album.id %>"><%= album.title %></a>
+
+        <form action="/albums/<%= album.id %>%>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger btn-sm">Delete Album</button>
+        </form>
+    </li>
+    <% }) %>
+</ul>

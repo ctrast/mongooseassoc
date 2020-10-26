@@ -104,7 +104,7 @@ router.post('/:albumId/songs', (req, res) => {
     const albumId = req.params.albumId;
   
     // find user in db by id
-    ALbum.findById(albumId, (err, foundAlbum) => {
+    Album.findById(albumId, (err, foundAlbum) => {
       // remove album
       foundAlbum.remove();
       // update 

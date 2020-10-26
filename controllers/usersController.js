@@ -10,6 +10,14 @@ router.get('/new', (req, res) => {
     res.render('users/new.ejs');
   });
 
+//Index - all
+router.get("/", (req, res) => {
+  User.find({}, (error, users) => {
+    res.render('users/index.ejs', {
+      users: users
+    });
+  });
+});
   // ADD EMPTY FORM TO USER SHOW PAGE TO ADD TWEET TO A USER
 router.get('/:userId', (req, res) => {
     // find user in db by id and add new tweet

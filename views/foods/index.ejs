@@ -1,0 +1,9 @@
+<h1>All Foods</h1>
+
+<ul>
+    <% foods.sort((a, b) => a.name.localeCompare(b.name));%>
+  <% foods.forEach(food => { %>
+  <li><a href="foods/<%= food.id %>"><%= food.name %></a></li>
+  <% }); %>
+
+</ul>
